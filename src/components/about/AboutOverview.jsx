@@ -70,7 +70,7 @@ const AboutOverview = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                to="/meet-the-team"
+                to="/founders"
                 className="px-6 py-3 border border-transparent text-center font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300"
               >
                 Meet Our Team

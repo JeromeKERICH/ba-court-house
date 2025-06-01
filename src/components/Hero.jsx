@@ -59,12 +59,13 @@ const HeroSection = () => {
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                to="/book-consultation"
+              <a href='https://calendly.com/vincent-onu/30min
+
+'
                 className="px-8 py-3.5 text-base font-medium text-white bg-orange-500 hover:bg-orange-600 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover-scale"
               >
                 Book Free Consultation
-              </Link>
+              </a>
               <Link
                 to="/services"
                 className="px-8 py-3.5 text-base font-medium text-blue-600 bg-white hover:bg-blue-50 rounded-lg border-2 border-blue-600 transition-all duration-300 hover-scale"

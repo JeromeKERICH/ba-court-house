@@ -11,6 +11,9 @@ import WebAppDevelopmentPage from "../pages/WebApp";
 import HRSolutionsPage from "../pages/HrSolution";
 import CareerCoachingPage from "../pages/CareerCoaching";
 import Contact from "../pages/Contact";
+import Services from "../pages/Services";
+import MeetTheTeam from "../pages/Founders";
+import CaseStudies from "../pages/CaseStudies";
 
 
 // ... import the rest
@@ -29,6 +32,9 @@ export default function AppRouter() {
         <Route path="hr-solutions" element={<HRSolutionsPage/>}/>
         <Route path="/career-coaching" element={<CareerCoachingPage/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/services" element={<Services/>}/>
+        <Route path="/founders" element={<MeetTheTeam/>}/>
+        <Route path="/case-studies" element={<CaseStudies/>}/>
        
       </Routes>
     <Footer/>

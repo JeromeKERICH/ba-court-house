@@ -41,12 +41,12 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Link
-              to="/book-consultation"
+            <a href='https://calendly.com/vincent-onu/30min'
+              
               className="ml-4 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300"
             >
               Book Consultation
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
