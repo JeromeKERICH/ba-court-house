@@ -11,25 +11,21 @@ const MeetTheTeam = () => {
       id: 1,
       name: 'Vincent Onu',
       role: 'Founder & CEO',
-      image: 'assets/team/vincent.jpg',
-      quote: "We don't just consult—we build with you.",
+      image: 'assets/vincent.jpg',
+      quote: "We don't just consult, we build with you.",
       story: [
-        "With 10 years in corporate strategy across Europe, Vincent saw firsthand how traditional consultancies would deliver beautiful reports that collected dust on shelves. After leading digital transformation at three Fortune 500 companies, he became frustrated with the gap between strategy and execution.",
-        "In 2020, during a late-night working session in an actual courthouse café (which inspired our name), Vincent sketched the BA Courthouse model on a napkin—a consultancy that would stay with clients through implementation, measuring success only by tangible business outcomes.",
-        "Today, his hands-on approach shapes every engagement, ensuring our strategies don't just look good on paper but drive real growth."
+        "Results-driven professional with expertise in IT business analysis, agile project management, and strategic process optimization. Adept at translating complex business challenges into actionable technical solutions that drive efficiency, innovation, and growth across technology, finance, and operations."
       ],
       funFact: "Once coded an entire MVP for a client's project himself when their dev team fell through."
     },
     {
       id: 2,
-      name: 'Amina',
+      name: 'Joshua ODUYERU',
       role: 'Co-Founder & CTO',
-      image: 'assets/team/amina.jpg',
+      image: 'assets/cofounder.jpg',
       quote: "Technology should serve people, not the other way around.",
       story: [
-        "Amina met Vincent in 2020 when she was running a struggling fintech startup. He consulted pro bono to help her pivot, and within 9 months, the company secured Series A funding. This experience convinced her of Vincent's unique approach.",
-        "What began as a mentor-mentee relationship evolved into a partnership when Amina joined to launch BA Courthouse's technology practice. Her engineering background (Cambridge, ex-Google) balances Vincent's business focus, creating our signature blend of technical depth and commercial acumen.",
-        "She architected our 'Implementation Guarantee'—the promise that distinguishes us from competitors."
+        "As Co-Lead of BACourthouse, I drive locally rooted, globally informed solutions for business, operational, and systemic challenges across diverse sectors. With expertise in strategy formulation, business analytics, and project management, I deliver stakeholder-driven, data-led interventions that align with compliance, inclusivity, and market expansion goals."
       ],
       funFact: "Speaks 4 languages and often conducts meetings in clients' native tongues."
     }
@@ -41,11 +37,11 @@ const MeetTheTeam = () => {
       <div className="hidden lg:block absolute top-0 left-0 w-32 h-32 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       <div className="hidden lg:block absolute bottom-0 right-0 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
         {/* Page header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            The <span className="text-blue-600">Founding</span> <span className="text-orange-500">Duo</span>
+          <h1 className="text-4xl sm:text-5xl font-bold text-blue-500 mb-4">
+            The Founding Duo
           </h1>
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
             How two industry veterans built BA Courthouse from a courthouse café
@@ -55,15 +51,13 @@ const MeetTheTeam = () => {
         {/* Origin story section */}
         <div className="mb-20 bg-gray-50 rounded-2xl p-8 md:p-12 shadow-inner border border-gray-200">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Our Origin Story</h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-gray-700">
+          <div className="max-w-5xl mx-auto space-y-6 text-gray-700">
             <p className="text-lg">
-              <span className="font-semibold text-blue-600">2020:</span> Vincent, frustrated with conventional consulting models, begins drafting what would become BA Courthouse's manifesto during countless hours at the Birmingham Crown Court café (where he liked the quiet ambiance despite the setting).
-            </p>
-            <p className="text-lg">
-              <span className="font-semibold text-blue-600">2022:</span> After helping turn around Amina's startup in record time, Vincent realizes his methodology works best when paired with technical excellence. Their first joint project—rescuing a failing e-commerce platform—becomes our first case study.
-            </p>
-            <p className="text-lg">
-              <span className="font-semibold text-blue-600">2025:</span> Officially incorporated as BA Courthouse, named as an homage to both Vincent's late-night strategy sessions and our commitment to delivering justice to overpriced, underdelivering consultancies.
+            It started with frustration and street food. One founder was watching an oil company waste millions because their reports didn't match what field workers actually needed. The other saw tech teams build perfect solutions that made nurses' jobs harder, not easier. Over plates of suya in Lagos traffic, they realized the problem: Africa was full of smart ideas that kept failing in execution. 
+            There were plenty of analysts and consultants, but not enough people who could bridge the gap between boardroom strategies and real-world operations.
+            <br/>
+            Their breaking point came when a female entrepreneur showed them her third bank rejection - not because her business was bad, but because she couldn't translate her vision into terms bankers understood. In that moment, BA CourtHouse was born: no fancy offices, just two professionals with 22 years of combined scars across oil & gas, tech, and finance, determined to fix what everyone else was overcomplicating. That first client got funded in three weeks. Today, whether it's helping hospitals implement tech that actually helps nurses or 
+            turning messy operations into investor-ready systems, their approach stays the same: if it doesn't work for the people using it, it doesn't work.
             </p>
           </div>
         </div>
@@ -108,13 +102,19 @@ const MeetTheTeam = () => {
                           <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
-                          <span>Created the "Embedded Consulting" model</span>
+                          <span>Co-founded BA CourtHouse, empowering professionals and businesses through process improvements, career growth strategies, and scalable digital solutions.</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
-                          <span>Architect of our financial viability assessment framework</span>
+                          <span>Spearheaded a fintech process automation initiative that reduced manual reporting by 70% by implementing AI-powered data workflows, saving 200+ hours monthly while improving accuracy.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          <span>ncreased user adoption by 40% through stakeholder-driven requirement prioritization and iterative UX improvements delivered in bi-weekly sprints.</span>
                         </li>
                       </>
                     ) : (
@@ -123,13 +123,25 @@ const MeetTheTeam = () => {
                           <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
-                          <span>Developed our proprietary technology audit system</span>
+                          <span>Drove 30-45% efficiency gains across Oil & Gas, FinTech, and Healthcare sectors through data-driven solutions.</span>
                         </li>
                         <li className="flex items-start">
                           <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
-                          <span>Pioneered the "Bilingual Development" approach for EU clients</span>
+                          <span>Led 100% on-time projects from ideation to execution, aligning with compliance (HSQSE) and stakeholder goals.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          <span>Increased female workforce participation by 25%+ via inclusive business programs in Nigeria/SSA</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="h-5 w-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                          <span>Optimized costs and reduced risks for 50+ clients through high-impact partnerships and operational interventions.</span>
                         </li>
                       </>
                     )}

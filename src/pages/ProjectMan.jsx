@@ -11,10 +11,10 @@ const ProjectManagementPage = () => {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-blue-50 pt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Professional <span className="text-blue-600">Project Management</span>
+            <h1 className="text-4xl font-bold text-blue-600 mb-4">
+              Professional Project Management
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               PMP-certified leadership to deliver your projects on time, within scope, and under budget.
@@ -26,10 +26,10 @@ const ProjectManagementPage = () => {
 
       {/* What We Offer */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              End-to-End <span className="text-orange-500">Project Leadership</span>
+              End-to-End Project Leadership
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We implement industry-standard methodologies tailored to your organization's needs.
@@ -96,9 +96,9 @@ const ProjectManagementPage = () => {
 
       {/* Our Process */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our <span className="text-blue-600">4-Phase</span> Project Management Approach
+            Our 4-Phase Project Management Approach
           </h2>
           
           <div className="grid md:grid-cols-4 gap-8">
@@ -113,7 +113,7 @@ const ProjectManagementPage = () => {
                 title: "Team Assembly",
                 description: "Identify stakeholders and build project team",
                 icon: <FaUsers className="w-full h-full" />,
-                color: "orange"
+                color: "blue"
               },
               {
                 title: "Execution",
@@ -125,17 +125,17 @@ const ProjectManagementPage = () => {
                 title: "Review & Handoff",
                 description: "Conduct retrospectives and transition ownership",
                 icon: <FaChartLine className="w-full h-full" />,
-                color: "orange"
+                color: "blue"
               }
             ].map((step, index) => (
               <div 
                 key={index} 
                 className={`bg-white p-6 rounded-xl shadow-sm border-t-4 ${step.color === 'orange' ? 'border-orange-500' : 'border-blue-500'} hover:shadow-md transition-all`}
               >
-                <div className={`text-4xl mb-4 ${step.color === 'orange' ? 'text-orange-500' : 'text-blue-500'}`}>
+                <div className={`text-2xl md:text-3xl mb-4 ${step.color === 'orange' ? 'text-orange-500' : 'text-blue-500'}`}>
                   {step.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-orange-600 mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
@@ -153,12 +153,11 @@ const ProjectManagementPage = () => {
             Our PMP-certified consultants average 92% on-time project completion across industries.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/book-consultation"
+            <a href='https://calendly.com/vincent-onu/30min'
               className="px-8 py-3.5 text-base font-medium text-white bg-orange-400 hover:bg-orange-300 rounded-lg shadow-lg transition-all duration-300"
             >
               Book Free Strategy Session
-            </Link>
+            </a>
             <Link
               to="/case-studies"
               className="px-8 py-3.5 text-base font-medium text-white bg-transparent hover:bg-blue-700 rounded-lg border-2 border-white transition-all duration-300"

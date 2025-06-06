@@ -11,6 +11,8 @@ const ServiceCTA = () => {
     "HR Solutions",
     "Web & App Development",
     "Career Coaching",
+    "Software Development",
+    "Management Consulting",
   ];
 
   const handleSubmit = (e) => {
@@ -24,7 +26,7 @@ const ServiceCTA = () => {
       {/* CTA Button */}
       <button
         onClick={() => setShowModal(true)}
-        className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+        className="bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
       >
         Make a Change
       </button>

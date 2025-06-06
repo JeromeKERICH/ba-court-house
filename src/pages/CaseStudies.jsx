@@ -45,7 +45,7 @@ const CaseStudies = () => {
         {/* Page header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-blue-600">Case</span> <span className="text-orange-500">Studies</span>
+            Our Case Studies
           </h1>
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
             Real-world solutions delivering measurable business impact

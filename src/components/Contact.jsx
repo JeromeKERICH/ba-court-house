@@ -32,11 +32,11 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-16 sm:py-20 lg:py-6 bg-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Get in <span className="text-blue-600">Touch</span>
+            Get in Touch
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Have questions or ready to start your project? Reach out to our team today.
@@ -65,7 +65,7 @@ const ContactSection = () => {
             </div>
 
             <div className="flex items-start">
-              <div className="flex-shrink-0 bg-orange-100 p-3 rounded-lg text-orange-500">
+              <div className="flex-shrink-0 bg-blue-100 p-3 rounded-lg text-blue-600">
                 <FaEnvelope className="w-6 h-6" />
               </div>
               <div className="ml-4">
@@ -86,7 +86,7 @@ const ContactSection = () => {
               </div>
               <div className="ml-4">
                 <h3 className="text-lg font-medium text-gray-900">Our Location</h3>
-                <p className="mt-1 text-gray-600">Remote HQ: Portugal</p>
+                <p className="mt-1 text-gray-600">We Work Remotely</p>
                 <p className="mt-1 text-sm text-gray-500">Serving clients worldwide</p>
               </div>
             </div>

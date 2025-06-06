@@ -45,8 +45,8 @@ const HeroSection = () => {
       </div>
 
       {/* Hero content remains the same as before */}
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-12 pt-24 sm:pt-32 lg:pt-40 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="relative z-10 pb-12 pt-16 sm:pt-32 lg:pt-25 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900">
               Empowering Businesses Through <span className="text-blue-600">Strategic Consulting</span> 
@@ -59,9 +59,7 @@ const HeroSection = () => {
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <a href='https://calendly.com/vincent-onu/30min
-
-'
+              <a href='https://calendly.com/vincent-onu/30min'
                 className="px-8 py-3.5 text-base font-medium text-white bg-orange-500 hover:bg-orange-600 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover-scale"
               >
                 Book Free Consultation

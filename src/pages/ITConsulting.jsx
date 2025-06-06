@@ -10,10 +10,10 @@ const ITBusinessConsultingPage = () => {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-50 to-orange-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-blue-600">IT Business Consulting</span> That Drives Digital Transformation
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+              IT Business Consulting That Drives Digital Transformation
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
               Align technology with business goals for maximum ROI and operational efficiency. Our experts bridge the gap between IT and business strategy.
@@ -32,11 +32,11 @@ const ITBusinessConsultingPage = () => {
 
       {/* Problem/Solution Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Is Your Technology <span className="text-orange-500">Holding You Back</span>?
+                Is Your Technology Holding You Back
               </h2>
               <ul className="space-y-4 text-gray-600 mb-8">
                 <li className="flex items-start">
@@ -58,14 +58,14 @@ const ITBusinessConsultingPage = () => {
               </ul>
             </div>
             <div className="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-600">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Our <span className="text-blue-600">Solution</span>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-4">
+                Our Solution
               </h3>
               <p className="text-gray-600 mb-6">
                 We provide strategic IT consulting that aligns technology investments with your business objectives, ensuring every dollar spent drives measurable results.
               </p>
               <div className="bg-white p-4 rounded-lg shadow-sm">
-                <p className="font-medium text-blue-600">
+                <p className="font-medium text-orange-600">
                   "BA Courthouse helped us reduce IT costs by 30% while improving system performance by 40% within 6 months."
                   <span className="block text-gray-700 mt-2">— Tech Director, Financial Services Client</span>
                 </p>
@@ -77,9 +77,9 @@ const ITBusinessConsultingPage = () => {
 
       {/* Services Breakdown */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our IT Consulting <span className="text-orange-500">Services</span>
+            Our IT Consulting Services
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -129,9 +129,9 @@ const ITBusinessConsultingPage = () => {
 
       {/* Methodology Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our <span className="text-blue-600">4-Phase</span> Consulting Approach
+            Our 4-Phase Consulting Approach
           </h2>
           
           <div className="relative">
@@ -182,24 +182,7 @@ const ITBusinessConsultingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Transform Your IT Infrastructure?
-          </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Schedule your free 60-minute consultation to identify quick wins and long-term strategies.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-              Book Free Consultation
-            </button>
-            <button className="bg-white text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg shadow-md transition-all duration-300">
-              Download IT Checklist
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

@@ -12,10 +12,10 @@ const CareerCoachingPage = () => {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-50 to-orange-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-blue-600">Career Coaching</span> for Tech Professionals
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-6">
+              Career Coaching for Tech Professionals
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Personalized mentoring to accelerate your career growth, whether you're starting out, 
@@ -41,16 +41,16 @@ const CareerCoachingPage = () => {
 
       {/* Who It's For */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Who Benefits From Our <span className="text-orange-500">Career Coaching</span>?
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            Who Benefits From Our Career Coaching
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "Early-Career Techies",
                 description: "Build strong foundations and avoid common pitfalls",
-                icon: <FaLaptopCode className="text-blue-500 text-3xl" />
+                icon: <FaLaptopCode className="text-orange-500 text-3xl" />
               },
               {
                 title: "Mid-Level Developers",
@@ -60,7 +60,7 @@ const CareerCoachingPage = () => {
               {
                 title: "Career Changers",
                 description: "Successfully transition into tech roles",
-                icon: <FaChartLine className="text-blue-500 text-3xl" />
+                icon: <FaChartLine className="text-orange-500 text-3xl" />
               },
               {
                 title: "Tech Leaders",
@@ -84,9 +84,9 @@ const CareerCoachingPage = () => {
 
       {/* Methodology */}
       <section id="how-it-works" className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
-            Our <span className="text-blue-600">4-Step</span> Career Acceleration Framework
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+            Our 4-Step Career Acceleration Framework
           </h2>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12">
             Proven system used by 300+ tech professionals to achieve career breakthroughs
@@ -155,7 +155,7 @@ const CareerCoachingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="https://calendly.com/bacourthouse/consult"
+              href="https://calendly.com/vincent-onu/30min"              
               className="px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
             >
               Schedule Now <FiArrowRight className="ml-2" />
@@ -175,9 +175,9 @@ const CareerCoachingPage = () => {
 
       {/* Success Stories */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Career <span className="text-orange-500">Transformations</span>
+            Career Transformations
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[

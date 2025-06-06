@@ -23,8 +23,7 @@ const ServicesOverview = () => {
         >
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              <span className="text-blue-600">Tailored Services</span> to Accelerate Your{" "}
-              <span className="text-orange-500">Business Success</span>
+             Accelerate Your Business Success
             </h2>
 
             <div className="prose prose-lg text-gray-600 mb-8">

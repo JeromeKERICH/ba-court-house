@@ -22,8 +22,8 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      color: "text-orange-500",
-      bgColor: "bg-orange-50",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
       path: "/agile"
     },
     {
@@ -46,8 +46,8 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      color: "text-orange-500",
-      bgColor: "bg-orange-50",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
       path: "/hr-solutions"
     },
     {
@@ -62,6 +62,46 @@ const ServiceBody = () => {
       bgColor: "bg-blue-50",
       path: "/web-app"
     },
+
+    {
+      title: "Sofware Development",
+      description: "End-to-end software solutions from concept to deployment.",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m-4-4l4 4 4-4m-4-4l-4-4 4 4 4-4-4 4z" />
+          
+        </svg>
+      ),
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      path: "/software",
+    },
+    {
+      title: "Research & Solutions Development",
+      description: "Innovative research services to drive product and service development.",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-4-4h8l-4 4zm0-6l4-4H8l4 4z" />
+          
+        </svg>
+      ),
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      path: "/research-consulting",
+    },
+    {
+      title: "Management Consulting",
+      description: "Strategic insights to enhance organizational performance and growth.",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4m16 0l-4-4m0 8l4-4"/>
+          
+        </svg>
+      ),
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      path:"/management-consulting",
+    },
     {
       title: "Career Coaching",
       description: "Personalized mentoring for tech professionals at all levels.",
@@ -70,8 +110,8 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      color: "text-orange-500",
-      bgColor: "bg-orange-50",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
       path: "/career-coaching"
     }
   ];
@@ -82,7 +122,7 @@ const ServiceBody = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-blue-600">Core</span> <span className="text-orange-500">Services</span>
+            Our Core Services
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
             Tailored solutions to drive your business transformation at every stage
@@ -105,7 +145,7 @@ const ServiceBody = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className={`inline-flex items-center ${service.color} font-medium group-hover:underline`}>
+                <div className={`inline-flex items-center text-orange-500 font-medium group-hover:underline`}>
                   Learn more
                   <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

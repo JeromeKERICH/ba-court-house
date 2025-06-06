@@ -12,14 +12,13 @@ const Footer = () => {
   const companyLinks = [
     { name: 'About Us', path: '/about' },
     { name: 'Case Studies', path: '/case-studies' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Careers', path: '/careers' },
   ];
 
   const contactInfo = [
     { text: 'info@bacourthouse.com' },
     { text: '+351 920 565 820' },
-    { text: 'Remote HQ: Portugal' },
+    { text: 'Remote' },
   ];
 
   return (

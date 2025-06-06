@@ -11,18 +11,18 @@ const HRSolutionsPage = () => {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-blue-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-blue-600">HR Solutions</span> for the Modern Workplace
+            <h1 className="text-2xl sm:text-5xl font-bold text-blue-600 mb-6">
+              HR Solutions for the Modern Workplace
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Transform your talent strategy with data-driven HR solutions that attract, develop, and retain top performers.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+              <a href='https://calendly.com/vincent-onu/30min' className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                 Get HR Consultation
-              </button>
+              </a>
               <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-all duration-300">
                 Download HR Toolkit
               </button>
@@ -33,11 +33,11 @@ const HRSolutionsPage = () => {
 
       {/* Problem Statement */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                The <span className="text-orange-500">HR Challenges</span> Businesses Face
+              <h2 className="text-3xl font-bold text-orange-600 mb-6">
+                The HR Challenges Businesses Face
               </h2>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start">
@@ -75,9 +75,9 @@ const HRSolutionsPage = () => {
 
       {/* Our Solutions */}
       <section className="py-16 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our <span className="text-blue-600">HR Solutions</span>
+            Our HR Solutions
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -139,7 +139,7 @@ const HRSolutionsPage = () => {
 
       {/* Case Study */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 md:p-12 text-white">
             <div className="md:grid md:grid-cols-3 md:gap-12 items-center">
               <div className="md:col-span-2">
@@ -173,24 +173,7 @@ const HRSolutionsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Ready to Transform Your <span className="text-blue-600">HR Strategy</span>?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Schedule a free consultation to discuss customized HR solutions for your organization.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-              Book Free HR Audit
-            </button>
-            <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-3 px-8 rounded-lg transition-all duration-300">
-              Call Us: +351 920 565 820
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

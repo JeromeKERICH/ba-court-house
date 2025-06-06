@@ -45,13 +45,13 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Why <span className="text-blue-600">Choose</span> <span className="text-orange-500">BA Courthouse?</span>
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose BA CourtHouse
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
+          <p className="max-w-2xl mx-auto text-lg text-gray-600 text-start md:text-center">
             The competitive edge that sets our consulting apart
           </p>
         </div>

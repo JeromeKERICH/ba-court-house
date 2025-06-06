@@ -14,6 +14,10 @@ import Contact from "../pages/Contact";
 import Services from "../pages/Services";
 import MeetTheTeam from "../pages/Founders";
 import CaseStudies from "../pages/CaseStudies";
+import SoftwareDevelopmentPage from "../pages/Software";
+import ResearchSolutionDevelopmentPage from "../pages/Research";
+import ManagementConsultingPage from "../pages/ManagementConsulting";
+import WhatsAppCTA from "../components/FloatingWhatsApp";
 
 
 // ... import the rest
@@ -22,6 +26,7 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
     <Navbar/>
+    <WhatsAppCTA/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
@@ -35,6 +40,9 @@ export default function AppRouter() {
         <Route path="/services" element={<Services/>}/>
         <Route path="/founders" element={<MeetTheTeam/>}/>
         <Route path="/case-studies" element={<CaseStudies/>}/>
+        <Route path="/software" element={<SoftwareDevelopmentPage/>}/>
+        <Route path="/research-consulting" element={<ResearchSolutionDevelopmentPage/>}/>
+        <Route path="/management-consulting" element={<ManagementConsultingPage/>}/>
        
       </Routes>
     <Footer/>

@@ -7,7 +7,7 @@ const AboutOverview = () => {
       <div className="hidden lg:block absolute top-0 left-0 w-32 h-32 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       <div className="hidden lg:block absolute bottom-0 right-0 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-10 lg:py-32">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-10 lg:py-20">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* Left column - Image */}
           <div className="relative mb-12 lg:mb-0">
@@ -35,9 +35,8 @@ const AboutOverview = () => {
 
           {/* Right column - Content */}
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              <span className="text-blue-600">Strategic Partners</span> in Your{" "}
-              <span className="text-orange-500">Business Growth</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+              Strategic Partnersin Your Business Growth
             </h2>
             
             <div className="prose prose-lg text-gray-600 mb-8">
