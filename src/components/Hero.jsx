@@ -67,9 +67,9 @@ const HeroSection = () => {
           <div className="text-center">
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-blue-600"
+              className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-blue-600 lg:text-center md:text-center text-start"
             >
-              EMPOWERING BUSINESS THROUGH <motion.span 
+              EMPOWERING BUSINESS THROUGH <br/> <motion.span 
                 className="text-gray-600"
                 whileHover={{ scale: 1.05 }}
               >Strategic Consulting &</motion.span> 
