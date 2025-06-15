@@ -12,7 +12,7 @@ const Footer = () => {
   const companyLinks = [
     { name: 'About Us', path: '/about' },
     { name: 'Case Studies', path: '/case-studies' },
-    { name: 'Careers', path: '/careers' },
+    
   ];
 
   const contactInfo = [
@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center">
-              <h2 className='text-2xl md:text-3xl'>Ba-Court House</h2>
+              <h2 className='text-2xl md:text-3xl'>BA CourtHouse</h2>
             </Link>
             <p className="text-blue-100">
               Empowering businesses through strategic consulting & agile coaching.

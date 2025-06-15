@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FaCode, FaServer, FaDatabase, FaCloud, FaRobot, FaShieldAlt, FaChartLine } from 'react-icons/fa';
+import { FaServer, FaRobot, FaShieldAlt, FaChartLine } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
 const SoftwareDevelopmentPage = () => {
@@ -7,13 +7,6 @@ const SoftwareDevelopmentPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const technologies = [
-        { name: "Languages", tools: "Python, Java, C#, JavaScript/TypeScript, Go, Rust" },
-        { name: "Frameworks", tools: ".NET, Spring Boot, Django, Node.js, Laravel" },
-        { name: "Cloud", tools: "AWS, Azure, Google Cloud, Kubernetes, Docker" },
-        { name: "AI/ML", tools: "TensorFlow, PyTorch, OpenAI, LangChain" },
-        { name: "DevOps", tools: "CI/CD Pipelines, Terraform, Ansible, GitHub Actions" },
-    ];
 
     const caseStudies = [
         {
@@ -54,7 +47,7 @@ const SoftwareDevelopmentPage = () => {
             </section>
 
             {/* Value Proposition */}
-            <section className="py-16 bg-white">
+            <section className="py-5 lg:py-10 bg-blue-50">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="lg:text-center">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -94,26 +87,10 @@ const SoftwareDevelopmentPage = () => {
                 </div>
             </section>
 
-            {/* Technology Stack */}
-            <section className="py-16 bg-gray-50">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                        Our Technology Expertise
-                    </h2>
-                    
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
-                        {technologies.map((tech, index) => (
-                            <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
-                                <div className="text-blue-500 font-medium mb-2">{tech.name}</div>
-                                <div className="text-sm text-gray-600">{tech.tools}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            
 
             {/* Development Process */}
-            <section className="py-16 bg-white">
+            <section className="py-5 lg:py-10 bg-blue-50">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                         Our Development Process
@@ -155,7 +132,7 @@ const SoftwareDevelopmentPage = () => {
             </section>
 
             {/* Case Studies */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-5 lg:py-10 bg-blue-50">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                         Software Success Stories
@@ -184,7 +161,7 @@ const SoftwareDevelopmentPage = () => {
             </section>
 
             {/* Security & Compliance */}
-            <section className="py-16 bg-white">
+            <section className="py-5 lg:py-10 bg-blue-50">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="lg:flex lg:items-center lg:justify-between">
                         <div className="lg:w-1/2">

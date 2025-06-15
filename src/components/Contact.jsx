@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPhone, FaPaperPlane } from 'react-icons/fa';
+import { useState } from 'react'
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa'
+import { supabase } from '../lib/supabaseClient'
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -7,33 +8,115 @@ const ContactSection = () => {
     email: '',
     subject: '',
     message: ''
-  });
+  })
+  
+  const [subscribeData, setSubscribeData] = useState({
+    name: '',
+    email: ''
+  })
+  
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+  const [subscribeStatus, setSubscribeStatus] = useState(null)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }));
-  };
+    }))
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will contact you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
+  const handleSubscribeChange = (e) => {
+    const { name, value } = e.target
+    setSubscribeData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+  
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+  
+      if (error) {
+        throw new Error(error.message)
+      }
+  
+      if (data && data.error) {
+        throw new Error(data.error)
+      }
+  
+      setSubmitStatus({
+        success: true,
+        message: data?.message || 'Message sent successfully!'
+      })
+  
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+  
+    } catch (error) {
+      setSubmitStatus({
+        success: false,
+        message: error.message || 'Failed to send message. Please try again.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault()
+    setSubscribeStatus(null)
+    
+    try {
+      const { data, error } = await supabase
+        .from('subscribers')
+        .insert([
+          {
+            name: subscribeData.name,
+            email: subscribeData.email,
+            subscribed_at: new Date().toISOString()
+          }
+        ])
+        .select()
+
+      if (error) throw error
+
+      setSubscribeStatus({
+        success: true,
+        message: 'Thank you for subscribing!'
+      })
+
+      setSubscribeData({
+        name: '',
+        email: ''
+      })
+
+    } catch (error) {
+      setSubscribeStatus({
+        success: false,
+        message: error.message || 'Subscription failed. Please try again.'
+      })
+    }
+  }
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-6 bg-blue-50">
+    <section id="contact" className="py-5 sm:py-10 lg:py-10 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Get in Touch
@@ -91,32 +174,66 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="pt-4">
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Connect With Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-white p-2 rounded-full shadow text-blue-600 hover:bg-blue-50 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-                  </svg>
-                </a>
-                <a href="#" className="bg-white p-2 rounded-full shadow text-blue-400 hover:bg-blue-50 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                  </svg>
-                </a>
-                <a href="#" className="bg-white p-2 rounded-full shadow text-blue-700 hover:bg-blue-50 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
-              </div>
+            {/* Subscription Form */}
+            <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Be part of our community</h3>
+              <p className='mb-4 text-gray-600'>Stay updated always with our latest insights and offers.</p>
+              
+              {subscribeStatus && (
+                <div className={`mb-4 p-3 rounded-lg ${subscribeStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                  {subscribeStatus.message}
+                </div>
+              )}
+
+              <form onSubmit={handleSubscribe}>
+                <div className="mb-4">
+                  <label htmlFor="subscribe-name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="subscribe-name"
+                    name="name"
+                    value={subscribeData.name}
+                    onChange={handleSubscribeChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="subscribe-email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="subscribe-email"
+                    name="email"
+                    value={subscribeData.email}
+                    onChange={handleSubscribeChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white p-6 sm:p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send us a message</h3>
+            
+            {submitStatus && (
+              <div className={`mb-4 p-4 rounded-lg ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                {submitStatus.message}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit}>
               <div className="mb-5">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -176,9 +293,10 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
                 <FaPaperPlane className="ml-2" />
               </button>
             </form>
@@ -186,7 +304,7 @@ const ContactSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ContactSection;
+export default ContactSection

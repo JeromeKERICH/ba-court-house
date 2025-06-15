@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import HeroSection from '../components/Hero'
-import CoreServices from '../components/Services'
-import WhyChooseUs from '../components/WhyUs'
-import ContactSection from '../components/Contact'
+import CoreServices from '../components/Services';
+import WhyChooseUs from '../components/WhyUs';
+import ContactSection from '../components/Contact';
+
 
 const Home = () => {
   useEffect(() => {
@@ -12,8 +13,8 @@ const Home = () => {
   return (
     <div>
       <HeroSection/>
-      <CoreServices/>
       <WhyChooseUs/>
+      <CoreServices/>
       <ContactSection/>
     </div>
   )

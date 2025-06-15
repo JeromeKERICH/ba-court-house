@@ -44,12 +44,12 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-gray-50">
+    <section className="py-5 sm:py-10 lg:py-10 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose BA CourtHouse
+          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+            Why Choose Us
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600 text-start md:text-center">
             The competitive edge that sets our consulting apart
@@ -97,7 +97,7 @@ const WhyChooseUs = () => {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
-                <p className="text-3xl font-bold text-orange-500">10+</p>
+                <p className="text-3xl font-bold text-orange-500">4+</p>
                 <p className="text-gray-600">Years Experience</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">

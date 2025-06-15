@@ -40,7 +40,7 @@ const CareerCoachingPage = () => {
       </section>
 
       {/* Who It's For */}
-      <section className="py-16 bg-white">
+      <section className="py-5 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
             Who Benefits From Our Career Coaching
@@ -83,7 +83,7 @@ const CareerCoachingPage = () => {
       </section>
 
       {/* Methodology */}
-      <section id="how-it-works" className="py-16 bg-gray-50">
+      <section id="how-it-works" className="py-5 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
             Our 4-Step Career Acceleration Framework
@@ -174,7 +174,7 @@ const CareerCoachingPage = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 bg-white">
+      <section className="py-5 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Career Transformations

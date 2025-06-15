@@ -36,14 +36,14 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-white to-blue-50 overflow-hidden">
       {/* Decorative elements */}
       <div className="hidden lg:block absolute top-0 left-0 w-32 h-32 bg-orange-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       <div className="hidden lg:block absolute bottom-0 right-0 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-10 lg:py-15">
         {/* Page header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Our Case Studies
           </h1>
@@ -101,15 +101,7 @@ const CaseStudies = () => {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to={caseStudy.link}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-                >
-                  Read full case study
-                  <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
+                
               </div>
             </div>
           ))}

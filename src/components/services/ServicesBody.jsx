@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
 
-const ServiceBody = () => {
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const CoreServices = () => {
   const services = [
     {
       title: "IT Business Consulting",
@@ -12,7 +14,8 @@ const ServiceBody = () => {
       ),
       color: "text-blue-600",
       bgColor: "bg-blue-50",
-      path: "/it-consulting"
+      path: "/it-consulting",
+      bgImage: "url('/assets/s2.jpg')"
     },
     {
       title: "Agile Coaching",
@@ -22,9 +25,10 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      path: "/agile"
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+      path: "/agile",
+      bgImage: "url('/assets/s1.jpg')"
     },
     {
       title: "Project Management",
@@ -34,9 +38,10 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
         </svg>
       ),
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      path: "/project-management"
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
+      path: "/project-management",
+      bgImage: "url('/assets/s6.jpg')"
     },
     {
       title: "HR Solutions",
@@ -46,9 +51,10 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      path: "/hr-solutions"
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+      path: "/hr-solutions",
+      bgImage: "url('/assets/s4.jpg')"
     },
     {
       title: "Web & App Development",
@@ -58,9 +64,23 @@ const ServiceBody = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      path: "/web-app"
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50",
+      path: "/web-app",
+      bgImage: "url('/assets/s3.jpg')"
+    },
+    {
+      title: "Career Coaching",
+      description: "Personalized mentoring for tech professionals at all levels.",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      color: "text-red-600",
+      bgColor: "bg-red-50",
+      path: "/career-coaching",
+      bgImage: "url('/assets/s7.jpg')"
     },
 
     {
@@ -75,6 +95,7 @@ const ServiceBody = () => {
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       path: "/software",
+      bgImage: "url('/assets/s8.jpg')"
     },
     {
       title: "Research & Solutions Development",
@@ -88,6 +109,7 @@ const ServiceBody = () => {
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       path: "/research-consulting",
+      bgImage: "url('/assets/s9.jpg')"
     },
     {
       title: "Management Consulting",
@@ -101,27 +123,16 @@ const ServiceBody = () => {
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       path:"/management-consulting",
+      bgImage: "url('/assets/s10.jpg')"
     },
-    {
-      title: "Career Coaching",
-      description: "Personalized mentoring for tech professionals at all levels.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      path: "/career-coaching"
-    }
   ];
 
   return (
-    <section className="py-[20px] px-[4%] sm:py-[20px] sm:px-[10%] bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-5 sm:py-10 lg:py-5 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
             Our Core Services
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
@@ -132,32 +143,62 @@ const ServiceBody = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Link
+            <motion.div
               key={index}
-              to={service.path}
-              className="group rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-orange-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="p-6">
-                <div className={`w-12 h-12 rounded-lg ${service.bgColor} ${service.color} flex items-center justify-center mb-4`}>
-                  {service.icon}
+              <Link
+                to={service.path}
+                className="group relative block h-full rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-transparent"
+              >
+                {/* Background Image with Gradient Overlay */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: service.bgImage }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className={`inline-flex items-center text-orange-500 font-medium group-hover:underline`}>
-                  Learn more
-                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                
+                {/* Content */}
+                <div className="relative p-6 h-full flex flex-col">
+                  <div className={`w-12 h-12 rounded-lg ${service.bgColor} ${service.color} flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-white group-hover:scale-110`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-orange-300 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-200 mb-4 group-hover:text-white transition-colors">
+                    {service.description}
+                  </p>
+                  <div className="mt-auto">
+                    <div className={`inline-flex items-center text-orange-300 font-medium group-hover:text-white group-hover:underline transition-colors`}>
+                      Learn more
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default ServiceBody;
+export default CoreServices;

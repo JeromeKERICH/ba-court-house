@@ -7,13 +7,7 @@ const ManagementConsultingPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-  const services = [
-    { name: "Strategy", tools: "Market Analysis, Competitive Positioning, Growth Frameworks" },
-    { name: "Operations", tools: "Process Optimization, Supply Chain, Cost Reduction" },
-    { name: "Digital Transformation", tools: "Tech Roadmaps, Change Management, Implementation" },
-    { name: "Organizational Design", tools: "Structure Optimization, Talent Strategy, Leadership Development" },
-    { name: "Financial Advisory", tools: "M&A Support, Valuation, Risk Management" },
-  ];
+  
 
   const caseStudies = [
     {
@@ -54,7 +48,7 @@ const ManagementConsultingPage = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-16 bg-white">
+      <section className="py-5 md:py-10 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -94,26 +88,10 @@ const ManagementConsultingPage = () => {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our Service Portfolio
-          </h2>
-          
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
-                <div className="text-blue-500 font-medium mb-2">{service.name}</div>
-                <div className="text-sm text-gray-600">{service.tools}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Case Studies */}
-      <section className="py-16 bg-white">
+      <section className="py-5 md:py-10 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Client Impact
@@ -142,7 +120,7 @@ const ManagementConsultingPage = () => {
       </section>
 
       {/* Differentiators */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-5 md:py-10 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="lg:w-1/2">
