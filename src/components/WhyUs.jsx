@@ -1,32 +1,38 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const WhyChooseUs = () => {
   const [activeTab, setActiveTab] = useState('expertise');
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
 
   const advantages = {
     expertise: {
       title: "Industry Experts",
       description: "Our team brings 10+ years of combined experience in digital transformation, with certifications in PMP, Scrum, and ITIL frameworks.",
-    
-      stats: "200+ Projects Delivered"
+      stats: "100+ Projects Delivered",
+      icon: "👨‍💼"
     },
     approach: {
       title: "Agile Modern Solutions",
       description: "We don't just consult - we implement. Our iterative approach ensures measurable results at every stage of your transformation journey.",
-      
-      stats: "40% Faster Implementation"
+      stats: "40% Faster Implementation",
+      icon: "⚡"
     },
     strategy: {
       title: "Personalized Strategy",
       description: "No cookie-cutter solutions. We analyze your unique challenges to create tailored roadmaps with clear KPIs and milestones.",
-  
-      stats: "100% Custom Solutions"
+      stats: "100% Custom Solutions",
+      icon: "🎯"
     },
     results: {
       title: "Proven Track Record",
       description: "From startups to Fortune 500 companies, our methodologies consistently deliver ROI. See our case studies for real-world examples.",
-      
-      stats: "95% Client Retention"
+      stats: "95% Client Retention",
+      icon: "📈"
     }
   };
 
@@ -34,140 +40,218 @@ const WhyChooseUs = () => {
     {
       quote: "BA Courthouse transformed our project delivery timeline from 6 months to just 8 weeks with their agile approach.",
       author: "Maria S., Tech Startup CEO",
-      company: "Lisbon"
+      company: "Lisbon",
+      rating: 5
     },
-    {
-      quote: "The IT consulting provided clear direction for our digital transformation, resulting in 30% cost savings.",
-      author: "David K., Financial Services Director",
-      company: "Remote"
-    }
   ];
 
+  const stats = [
+    { value: "4+", label: "Years Experience", color: "text-orange-500" },
+    { value: "20+", label: "Happy Clients", color: "text-blue-600" },
+    { value: "10+", label: "Industries Served", color: "text-orange-500" },
+    { value: "100%", label: "Client-Focused", color: "text-blue-600" }
+  ];
+
+  const credentials = [
+    "Certified Scrum Masters",
+    "PMP Certified Project Managers",
+    "ITIL v4 Certified",
+    "Google Cloud Certified"
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-5 sm:py-10 lg:py-10 bg-blue-50">
+    <section className="py-5 sm:py-10 lg:py-15 bg-gradient-to-b from-blue-50 to-white" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-            Why Choose Us
-          </h2>
-          <p className="max-w-2xl mx-auto text-lg text-gray-600 text-start md:text-center">
-            The competitive edge that sets our consulting apart
-          </p>
-        </div>
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
+          <motion.p 
+            variants={itemVariants}
+            className="text-lg font-bold text-orange-500 mb-3"
+          >
+            Why Work With Us
+          </motion.p>
+          <motion.h2 
+            variants={itemVariants}
+            className="text-3xl text-start md:text-center lg:text-center sm:text-5xl font-bold text-gray-900 mb-4"
+          >
+            The Competitive Edge That Sets Us Apart
+          </motion.h2>
+          <motion.p 
+            variants={itemVariants}
+            className="max-w-2xl mx-auto text-l text-gray-600"
+          >
+            We don't just meet expectations we redefine what's possible for your business
+          </motion.p>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Advantages - Left Column */}
-          <div>
+          <motion.div
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={containerVariants}
+          >
             {/* Tab Navigation */}
-            <div className="flex space-x-2 mb-8 overflow-x-auto pb-2">
+            <motion.div 
+              variants={itemVariants}
+              className="flex space-x-2 mb-8 overflow-x-auto pb-2 scrollbar-hide"
+            >
               {Object.keys(advantages).map((key) => (
-                <button
+                <motion.button
                   key={key}
                   onClick={() => setActiveTab(key)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
+                  className={`px-5 py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                     activeTab === key
-                      ? 'bg-orange-500 text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
                   }`}
+                  whileHover={{ scale: activeTab === key ? 1 : 1.05 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {advantages[key].title}
-                </button>
+                </motion.button>
               ))}
-            </div>
+            </motion.div>
 
             {/* Active Tab Content */}
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-              <div className="flex items-start mb-4">
-                <span className="text-3xl mr-4">{advantages[activeTab].icon}</span>
+            <motion.div 
+              variants={itemVariants}
+              className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <div className="flex items-start mb-6">
+                
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">
                     {advantages[activeTab].title}
                   </h3>
-                  <p className="text-blue-600 font-medium">
+                  <p className="text-blue-600 font-semibold text-lg">
                     {advantages[activeTab].stats}
                   </p>
                 </div>
               </div>
-              <p className="text-gray-600 pl-12">
+              <p className="text-gray-600 text-lg pl-16">
                 {advantages[activeTab].description}
               </p>
-            </div>
+            </motion.div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
-                <p className="text-3xl font-bold text-orange-500">4+</p>
-                <p className="text-gray-600">Years Experience</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
-                <p className="text-3xl font-bold text-blue-600">20+</p>
-                <p className="text-gray-600">Happy Clients</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
-                <p className="text-3xl font-bold text-orange-500">10+</p>
-                <p className="text-gray-600">Industries Served</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
-                <p className="text-3xl font-bold text-blue-600">100%</p>
-                <p className="text-gray-600">Client-Focused</p>
-              </div>
-            </div>
-          </div>
+            <motion.div 
+              variants={itemVariants}
+              className="grid grid-cols-2 gap-5 mt-10"
+            >
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-white p-5 rounded-xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all"
+                  whileHover={{ y: -5 }}
+                >
+                  <p className={`text-4xl font-bold ${stat.color} mb-2`}>{stat.value}</p>
+                  <p className="text-gray-600 font-medium">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
 
           {/* Testimonials - Right Column */}
-          <div>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
-                What Our Clients Say
+          <motion.div
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={containerVariants}
+          >
+            <motion.div 
+              variants={itemVariants}
+              className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 mb-10 hover:shadow-2xl transition-all"
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 pb-3 border-b border-gray-200">
+                Client Success Stories
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="relative pl-6">
-                    <div className="absolute left-0 top-1 text-4xl text-gray-200">"</div>
-                    <blockquote className="text-gray-600 italic">
+                  <motion.div 
+                    key={index} 
+                    className="relative pl-8"
+                    variants={itemVariants}
+                  >
+                    <div className="absolute left-0 top-0 text-6xl text-gray-100 font-serif">"</div>
+                    <blockquote className="text-gray-600 text-lg italic pl-2">
                       {testimonial.quote}
                     </blockquote>
-                    <div className="mt-4 text-right">
-                      <p className="font-medium text-gray-900">{testimonial.author}</p>
-                      <p className="text-sm text-gray-500">{testimonial.company}</p>
+                    <div className="mt-6 flex justify-between items-center">
+                      <div>
+                        <p className="font-bold text-gray-900">{testimonial.author}</p>
+                        <p className="text-sm text-gray-500">{testimonial.company}</p>
+                      </div>
+                      <div className="flex">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Trust Badges */}
-            <div className="bg-blue-600 p-6 rounded-xl text-white">
-              <h3 className="text-xl font-bold mb-4">Our Credentials</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-orange-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Certified Scrum Masters
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-orange-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  PMP Certified Project Managers
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-orange-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  ITIL v4 Certified
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-orange-300" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Google Cloud Certified
-                </li>
+            <motion.div 
+              variants={itemVariants}
+              className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-2xl text-white shadow-xl hover:shadow-2xl transition-all"
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-2xl font-bold mb-6">Our Professional Credentials</h3>
+              <ul className="space-y-4">
+                {credentials.map((credential, index) => (
+                  <motion.li 
+                    key={index} 
+                    className="flex items-center text-lg"
+                    whileHover={{ x: 5 }}
+                  >
+                    <svg className="w-6 h-6 mr-3 text-orange-300" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    {credential}
+                  </motion.li>
+                ))}
               </ul>
-            </div>
-          </div>
+              <motion.div 
+                className="mt-8 pt-5 border-t border-blue-500 flex justify-center"
+                whileHover={{ scale: 1.02 }}
+              >
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
