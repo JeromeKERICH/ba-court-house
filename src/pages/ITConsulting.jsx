@@ -1,33 +1,14 @@
 import { useEffect, useState } from 'react';
-import { FaChartLine, FaCogs, FaMobileAlt, FaServer, FaUsersCog } from 'react-icons/fa';
+import { FaChartLine, FaArrowRight, FaCogs, FaServer, FaUsersCog, FaShieldAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
 
 const ITBusinessConsultingPage = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [touchStart, setTouchStart] = useState(null);
-    const [touchEnd, setTouchEnd] = useState(null);
-    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const handleTouchStart = (e) => {
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-
-    const handleTouchMove = (e) => {
-        setTouchEnd(e.targetTouches[0].clientX);
-    };
-
-    const handleTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-        
-        const distance = touchStart - touchEnd;
-        if (distance > 5) {
-            setActiveIndex((prev) => (prev === 3 ? 0 : prev + 1));
-        } else if (distance < -5) {
-            setActiveIndex((prev) => (prev === 0 ? 3 : prev - 1));
-        }
-    };
+    
+    
 
     const phases = [
         {
@@ -58,196 +39,229 @@ const ITBusinessConsultingPage = () => {
 
     const services = [
         {
-            icon: <FaChartLine className="text-blue-600 text-4xl mb-4" />,
+            icon: <FaChartLine className="text-white text-4xl mb-4" />,
             title: "IT Strategy Development",
-            description: "Create a roadmap aligning technology with 3-5 year business objectives, including budget planning and ROI analysis."
+            description: "Create a roadmap aligning technology with 3-5 year business objectives, including budget planning and ROI analysis.",
+            bgImage: "/assets/it.jpg"
         },
         {
-            icon: <FaCogs className="text-blue-600 text-4xl mb-4" />,
+            icon: <FaCogs className="text-white text-4xl mb-4" />,
             title: "System Optimization",
-            description: "Audit existing infrastructure to identify performance bottlenecks and cost-saving opportunities."
+            description: "Audit existing infrastructure to identify performance bottlenecks and cost-saving opportunities.",
+            bgImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         },
+        
         {
-            icon: <FaMobileAlt className="text-blue-600 text-4xl mb-4" />,
-            title: "Digital Transformation",
-            description: "Guide your transition to cloud-based solutions, automation, and next-gen technologies."
-        },
-        {
-            icon: <FaServer className="text-blue-600 text-4xl mb-4" />,
+            icon: <FaServer className="text-white text-4xl mb-4" />,
             title: "Infrastructure Planning",
-            description: "Design scalable, secure architectures that grow with your business needs."
+            description: "Design scalable, secure architectures that grow with your business needs.",
+            bgImage: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         },
         {
-            icon: <FaUsersCog className="text-blue-600 text-4xl mb-4" />,
+            icon: <FaUsersCog className="text-white text-4xl mb-4" />,
             title: "Vendor Management",
-            description: "Evaluate and select technology partners, negotiate contracts, and manage relationships."
+            description: "Evaluate and select technology partners, negotiate contracts, and manage relationships.",
+            bgImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         },
         {
-            icon: <FaChartLine className="text-blue-600 text-4xl mb-4" />,
+            icon: <FaShieldAlt className="text-white text-4xl mb-4" />,
             title: "Compliance & Security",
-            description: "Ensure systems meet industry regulations (GDPR, HIPAA, etc.) with robust security frameworks."
+            description: "Ensure systems meet industry regulations (GDPR, HIPAA, etc.) with robust security frameworks.",
+            bgImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        }, 
+        {
+            icon: <FaUsersCog className="text-white text-4xl mb-4" />,
+            title: "Digital Transformation",
+            description: "Guide your transition to cloud-based solutions, automation, and next-gen technologies.",
+            bgImage: "/assets/digi.jpg"
         }
     ];
 
-    const PhaseCard = ({ phase }) => (
-        <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm h-full">
-            <div className="flex items-center mb-4">
-                <div className="bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                    {phase.step}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900">{phase.title}</h3>
-            </div>
-            <p className="text-gray-600 mb-3">{phase.description}</p>
-            <p className="text-sm text-blue-600 font-medium">{phase.duration}</p>
-        </div>
-    );
+
+
+  
 
     return (
-        <div className="bg-white">
-            {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-blue-50 to-orange-50 py-12 md:py-20 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center">
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-blue-600 mb-4 md:mb-6">
-                            IT Business Consulting That Drives Digital Transformation
-                        </h1>
-                        <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 md:mb-10">
-                            Align technology with business goals for maximum ROI and operational efficiency.
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base">
-                                Get Your Free IT Assessment
-                            </button>
-                            <button className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 text-sm sm:text-base">
-                                View Case Studies
-                            </button>
-                        </div>
-                    </div>
+        <div className="bg-blue-50">
+            {/* Hero Section - Redesigned with same colors */}
+            <section className="relative bg-gradient-to-r from-gray-800 to-gray-800 overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0aDUwdi0ySDM2djJ6TTM2IDE2aDUwdi0ySDM2djJ6TTE2IDM0aDE4di0ySDE2djJ6TTE2IDE2aDE4di0ySDE2djJ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
                 </div>
-            </section>
 
-            {/* Problem/Solution Section */}
-            <section className="py-8 bg-blue-50 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                        <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
-                                Is Your Technology Holding You Back
-                            </h2>
-                            <ul className="space-y-3 md:space-y-4 text-gray-600 mb-6 md:mb-8">
-                                {["Outdated systems slowing down operations", 
-                                  "IT projects that don't deliver expected ROI", 
-                                  "Security vulnerabilities keeping you awake at night", 
-                                  "Teams struggling with inefficient workflows"].map((item, index) => (
-                                    <li key={index} className="flex items-start">
-                                        <div className="flex-shrink-0 h-5 w-5 text-orange-500 mt-1 mr-3">✖</div>
-                                        <span className="text-sm md:text-base">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="bg-blue-50 p-6 md:p-8 rounded-xl border-l-0 md:border-l-4 border-blue-600">
-                            <h3 className="text-xl md:text-2xl font-semibold text-blue-600 mb-3 md:mb-4">
-                                Our Solution
-                            </h3>
-                            <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
-                                We provide strategic IT consulting that aligns technology investments with your business objectives.
-                            </p>
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-medium text-orange-600 text-sm md:text-base">
-                                    "BA Courthouse helped us reduce IT costs by 30% while improving system performance by 40% within 6 months."
-                                    <span className="block text-gray-700 mt-1 md:mt-2 text-xs md:text-sm">— Tech Director, Financial Services Client</span>
-                                </p>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <motion.div 
+                                className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2, duration: 0.6 }}
+                            >
+                                <span className="text-sm font-semibold text-orange-500 tracking-wider">
+                                    DIGITAL TRANSFORMATION EXPERTS
+                                </span>
+                            </motion.div>
+
+                            <motion.h1 
+                                className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3, duration: 0.6 }}
+                            >
+                                IT Business Consulting That <span className="text-blue-300">Drives Digital Transformation</span>
+                            </motion.h1>
+
+                            <motion.p 
+                                className="text-xl text-blue-100 max-w-xl mb-8"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4, duration: 0.6 }}
+                            >
+                                Align technology with business goals for maximum ROI and operational efficiency.
+                            </motion.p>
+
+                            <motion.div 
+                                className="flex flex-col sm:flex-row gap-4"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                            >
+                            <motion.a
+                                href="https://calendly.com/vincent-onu/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-orange-500 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center cursor-pointer" // <-- Add this
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.98 }}
+                                >
+                                Get Your IT Assessment <FaArrowRight className="ml-2" />
+                                </motion.a>
+                            </motion.div>
+                        </motion.div>
+
+                        <motion.div 
+                            className="relative"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 0.8 }}
+                        >
+                            <div className="relative z-10">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                    alt="Business technology illustration"
+                                    className="w-full h-auto rounded-xl shadow-2xl border-8 border-white/10"
+                                />
                             </div>
-                        </div>
+                            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Services Breakdown */}
-            <section className="py-12 bg-blue-50 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-6 md:mb-8">
-                        Our IT Consulting Services
-                    </h2>
+            {/* Services Section - Enhanced Card Design */}
+            <section className="py-5 md:py-15 bg-blue-50 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div 
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+                            Our IT Consulting Services
+                        </h2>
+                        
+                    </motion.div>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
-                            <div key={index} className="bg-white p-6 md:p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                                <div className="text-center">
-                                    {service.icon}
-                                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{service.title}</h3>
-                                    <p className="text-gray-600 text-sm md:text-base">{service.description}</p>
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group"
+                            >
+                                <div className="h-full bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 group-hover:shadow-lg transition-all duration-300">
+                                    <div className="relative h-48 overflow-hidden">
+                                        <img 
+                                            src={service.bgImage} 
+                                            alt={service.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 "></div>
+                                        <div className="absolute top-6 left-6">
+                                           
+                                        </div>
+                                    </div>
+                                    <div className="p-6">
+                                        <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                                        <p className="text-gray-600">{service.description}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Methodology Section */}
-            <section className="py-5 bg-blue-50 px-4">
+            {/* Methodology Section - Enhanced Timeline */}
+            <section className="py-5 bg-white px-4">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8 md:mb-10">
-                        Our 4-Phase Consulting Approach
-                    </h2>
+                    <motion.div 
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Our Consulting Approach
+                        </h2>
                     
-                    {/* Desktop Grid View */}
-                    <div className="hidden md:block relative">
-                        <div className="absolute top-16 left-0 right-0 h-1 bg-gray-200 z-0"></div>
-                        <div className="grid md:grid-cols-4 gap-8 relative z-10">
+                    </motion.div>
+                    
+                    <div className="relative">
+                        {/* Timeline */}
+                        <div className="hidden md:block absolute left-1/2 h-full w-1 bg-blue-200 transform -translate-x-1/2"></div>
+                        
+                        <div className="space-y-12 md:space-y-0">
                             {phases.map((phase, index) => (
-                                <PhaseCard key={index} phase={phase} />
-                            ))}
-                        </div>
-                    </div>
-                    
-                    {/* Mobile Carousel View */}
-                    <div className="md:hidden">
-                        <div 
-                            className="relative overflow-hidden"
-                            onTouchStart={handleTouchStart}
-                            onTouchMove={handleTouchMove}
-                            onTouchEnd={handleTouchEnd}
-                        >
-                            <div 
-                                className="flex transition-transform duration-300 ease-out"
-                                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                            >
-                                {phases.map((phase, index) => (
-                                    <div key={index} className="w-full flex-shrink-0 px-2">
-                                        <PhaseCard phase={phase} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        
-                        {/* Navigation Dots */}
-                        <div className="flex justify-center mt-6 space-x-2">
-                            {phases.map((_, index) => (
-                                <button
+                                <motion.div
                                     key={index}
-                                    onClick={() => setActiveIndex(index)}
-                                    className={`w-3 h-3 rounded-full ${index === activeIndex ? 'bg-blue-600' : 'bg-gray-300'}`}
-                                    aria-label={`Go to slide ${index + 1}`}
-                                />
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="relative"
+                                >
+                                    {/* Timeline dot */}
+                                    <div className={`hidden md:flex absolute top-8 left-1/2 w-6 h-6 rounded-full ${index % 2 === 0 ? 'bg-orange-500 -ml-12' : 'bg-blue-600 -mr-12'} items-center justify-center transform -translate-x-1/2`}>
+                                        <span className="text-white font-bold">{phase.step}</span>
+                                    </div>
+                                    
+                                    {/* Card - alternates sides on desktop */}
+                                    <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
+                                        <div className="bg-blue-50 p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+                                            <div className="flex items-center mb-4">
+                                                <div className="md:hidden bg-blue-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                                                    {phase.step}
+                                                </div>
+                                                <h3 className="text-xl font-semibold text-gray-900">{phase.title}</h3>
+                                            </div>
+                                            <p className="text-gray-600 mb-3">{phase.description}</p>
+                                            <p className="text-sm text-blue-600 font-medium">{phase.duration}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
                             ))}
-                        </div>
-                        
-                        {/* Navigation Arrows */}
-                        <div className="flex justify-between mt-4">
-                            <button 
-                                onClick={() => setActiveIndex(prev => (prev === 0 ? 3 : prev - 1))}
-                                className="text-blue-600 font-bold py-2 px-4 rounded"
-                            >
-                                &larr; Previous
-                            </button>
-                            <button 
-                                onClick={() => setActiveIndex(prev => (prev === 3 ? 0 : prev + 1))}
-                                className="text-blue-600 font-bold py-2 px-4 rounded"
-                            >
-                                Next &rarr;
-                            </button>
                         </div>
                     </div>
                 </div>

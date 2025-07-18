@@ -31,7 +31,7 @@ const Footer = () => {
               <h2 className='text-2xl md:text-3xl'>BA CourtHouse</h2>
             </Link>
             <p className="text-blue-100">
-              Empowering businesses through strategic consulting & agile coaching.
+            Empowering businesses through strategic consulting & scalable agile transformation.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-blue-100 hover:text-orange-300">
@@ -106,7 +106,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="mt-12 pt-6 border-t border-blue-500 flex flex-col md:flex-row justify-between items-center">
           <p className="text-blue-100 text-sm">
-            &copy; {new Date().getFullYear()} BA Courthouse. All rights reserved.
+            &copy; {new Date().getFullYear()} BA CourtHouse. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" className="text-blue-100 hover:text-orange-300 text-sm">

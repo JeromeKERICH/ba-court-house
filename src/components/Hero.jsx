@@ -104,13 +104,13 @@ const HeroSection = () => {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
               >
-                Trusted by 10+ businesses worldwide
+                Trusted by 15+ businesses worldwide
               </motion.span>
             </motion.div>
             
             <motion.h1 
               variants={itemVariants}
-              className="text-3xl text-start sm:text-5xl lg:text-7xl lg:text-center font-bold tracking-tight text-white mb-6 leading-tight"
+              className="text-3xl text-start md:text-4xl lg:text-6xl lg:text-center font-bold tracking-tight text-white mb-6 leading-tight"
             >
               <motion.span 
                 className="inline-block"
@@ -123,7 +123,7 @@ const HeroSection = () => {
                 className="inline-block bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.02 }}
               >
-                With Expert Strategy & Execution
+                With Strateic Consulting & Agile Transformation
               </motion.span>
             </motion.h1>
             
@@ -131,7 +131,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-start text-white font-medium"
             >
-              We help ambitious companies accelerate growth through digital transformation, 
+              We help ambitious scaling companies, startups, NGOs, and Government entities accelerate growth through digital transformation, 
               agile methodologies, and strategic consulting tailored to your unique challenges.
             </motion.p>
             

@@ -1,3 +1,4 @@
+import { a } from "framer-motion/client";
 import React, { useState } from "react";
 
 const FAQSection = () => {
@@ -23,6 +24,35 @@ const FAQSection = () => {
       question: "Is there a consultation before booking?",
       answer:
         "Absolutely! We offer a free 15-minute consultation to understand your needs before starting any project.",
+    },
+    {
+      question: "What is your pricing model?",
+      answer:
+        "Our pricing varies based on the service and complexity of the project. We provide transparent quotes after our initial consultation.",
+    },
+    {
+      question: "How can I contact support?",
+      answer: "We are always available to answer you 24/7. Find contact information on our Contact page or use the chat feature on our website.",
+    }, 
+    {
+      question: "Do you provide ongoing support after project completion?",
+      answer:
+        "Yes, we offer various support packages to ensure your project runs smoothly even after launch.",
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer:
+        "We have experience across multiple industries including technology, healthcare, finance, and education. Our team adapts to your specific sector needs.",
+    },
+    {
+      question: "Can you help with digital marketing?",
+      answer:
+        "Yes, we offer digital marketing services including SEO, social media management, and content marketing to help grow your online presence.",
+    },
+    {
+      question: "What is your project turnaround time?",
+      answer:
+        "Turnaround times vary by project scope. We provide estimated timelines during our initial consultation.",
     },
   ];
 
